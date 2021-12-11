@@ -23,8 +23,9 @@ public class Reto2WebApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Pendiente");
-
+		userCrudRepository.deleteAll();
+		vegetarianCrudRepository.deleteAll();
+		orderCrudRepository.deleteAll();
 	}
 
 }

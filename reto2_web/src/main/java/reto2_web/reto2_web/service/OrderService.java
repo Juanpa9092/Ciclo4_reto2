@@ -72,4 +72,16 @@ public class OrderService {
         return aBoolean;
     }
 
+    public List<Order> orderSalesManById(int id){
+        return orderRepository.orderSalesManById(id);
+    }
+
+    public List<Order> orderSalesManByState(String state, int id){
+        return orderRepository.orderSalesManByState(state, id);
+    }
+
+    public List<Order> ordersSalesManByDate(String dateStr, Integer id) {
+        return orderRepository.ordersSalesManByDate(dateStr,id);
+    }
+
 }

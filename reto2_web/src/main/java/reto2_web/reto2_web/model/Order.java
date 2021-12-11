@@ -52,6 +52,19 @@ public class Order {
     public void setSalesMan(User salesMan) {
         this.salesMan = salesMan;
     }
+    public Map<String, Vegetarian> getProducts() {
+        return products;
+    }
+    public void setProducts(Map<String, Vegetarian> products) {
+        this.products = products;
+    }
+    public Map<String, Integer> getQuantities() {
+        return quantities;
+    }
+    public void setQuantities(Map<String, Integer> quantities) {
+        this.quantities = quantities;
+    }
+    
     
     
 }
