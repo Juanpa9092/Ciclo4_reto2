@@ -1,5 +1,7 @@
 package reto2_web.reto2_web.model;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,6 +18,8 @@ public class User {
     private Integer id;
     private String identification;
     private String name;
+    private Date birthtDay;
+    private String monthBirthtDay;
     private String address;
     private String cellPhone;
     private String email;
@@ -75,6 +79,18 @@ public class User {
     }
     public void setType(String type) {
         this.type = type;
+    }
+    public Date getBirthtDay() {
+        return birthtDay;
+    }
+    public void setBirthtDay(Date birthtDay) {
+        this.birthtDay = birthtDay;
+    }
+    public String getMonthBirthtDay() {
+        return monthBirthtDay;
+    }
+    public void setMonthBirthtDay(String monthBirthtDay) {
+        this.monthBirthtDay = monthBirthtDay;
     }
 
     

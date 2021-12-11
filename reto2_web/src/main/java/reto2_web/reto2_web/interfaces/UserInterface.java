@@ -7,6 +7,9 @@ import reto2_web.reto2_web.model.User;
 
 
 public interface UserInterface extends MongoRepository<User, Integer> {
-     Optional<User> findByEmail(String email);
+    Optional<User> findByEmail(String email);
+
     Optional<User> findByEmailAndPassword(String email,String password);
+
+    Optional<User> findTopByOrderByIdDesc();
 }
