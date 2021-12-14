@@ -76,4 +76,12 @@ public class VegetarianService {
         return aBoolean;
     }
 
+    public List<Vegetarian> vegetarianByPrice(double price){
+        return clotheRepository.vegetarianByPrice(price);
+    }
+
+    public List<Vegetarian> vegetarianByDescription(String description){
+        return clotheRepository.vegetarianByDescription(description);
+    }
+
 }

@@ -5,12 +5,17 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import reto2_web.reto2_web.interfaces.UserInterface;
 import reto2_web.reto2_web.model.User;
 
 @Repository
 public class UserRepository {
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
     @Autowired
     private UserInterface userCrudRepository;
 
@@ -46,6 +51,15 @@ public class UserRepository {
 
     public Optional<User> lastUserId(){
         return userCrudRepository.findTopByOrderByIdDesc();
+    }
+
+    public List<User> userByMonthBirthtDay(String month){
+        Query query = new Query();
+        Criteria criterio = Criteria.where("monthBirthtDay").is(month);
+        query.addCriteria(criterio);
+
+        List<User> orders = mongoTemplate.find(query,User.class);
+        return orders;
     }
 
 }
